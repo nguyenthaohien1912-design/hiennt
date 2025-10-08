@@ -150,7 +150,22 @@ if uploaded_file:
             st.code(extracted, language="json")
 
             try:
-                data = eval(extracted)
+import json
+import re
+
+# Làm sạch chuỗi AI trả về (loại bỏ markdown ```json … ```)
+clean_text = re.sub(r"```[a-zA-Z]*", "", extracted)
+clean_text = clean_text.replace("```", "").strip()
+
+# Thay 'null' thành 'null' JSON hợp lệ
+clean_text = clean_text.replace("null", "null")
+
+try:
+    data = json.loads(clean_text)
+except json.JSONDecodeError as e:
+    st.error(f"Lỗi định dạng JSON từ AI: {e}")
+    st.stop()
+
                 df_cf = build_cashflow(data)
 
                 st.subheader("📊 Bảng Dòng Tiền Dự Án")
