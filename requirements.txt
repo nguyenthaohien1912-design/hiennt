@@ -1,26 +1,22 @@
-# Streamlit app cho phân tích phương án kinh doanh từ file Word
+# requirements.txt cho ứng dụng Đánh giá Phương án Kinh doanh
 
-# --- Thư viện giao diện chính ---
-
+# Thư viện chính cho giao diện web
 streamlit
 
-# --- Xử lý dữ liệu ---
-
+# Thư viện xử lý dữ liệu (bắt buộc)
 pandas
+
+# Thư viện cho tính toán tài chính (đặc biệt là NPV, IRR)
 numpy
 
-# --- Đọc file Word (.docx) ---
-
-python-docx
-
-# --- Tính toán và xử lý số liệu ---
-
-openpyxl
-
-# --- Gọi API Gemini AI ---
-
+# Thư viện cho chức năng AI (sử dụng Gemini API)
 google-genai
 
-# --- Hỗ trợ định dạng Markdown (tránh lỗi .to_markdown) ---
+# Thư viện cần thiết để xử lý file Word (.docx)
+python-docx
 
+# Thư viện cho xử lý file Excel (nếu cần cho các chức năng khác sau này)
+openpyxl 
+
+# tabulate (giữ lại vì có thể hữu ích cho to_markdown() trong một số môi trường)
 tabulate
