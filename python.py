@@ -178,14 +178,14 @@ col2.metric("IRR (%)", f"{irr:.2f}")
 col3.metric("PP (năm)", pp)
 col4.metric("DPP (năm)", dpp)
 
-                if st.button("🧠 Yêu cầu AI phân tích hiệu quả dự án"):
-                    with st.spinner("AI đang phân tích..."):
-                        ai_result = ai_analyze_project(npv, irr, pp, dpp, api_key)
-                        st.markdown("### 💡 Nhận xét từ AI:")
-                        st.info(ai_result)
+if st.button("🧠 Yêu cầu AI phân tích hiệu quả dự án"):
+with st.spinner("AI đang phân tích..."):
+ai_result = ai_analyze_project(npv, irr, pp, dpp, api_key)
+st.markdown("### 💡 Nhận xét từ AI:")
+st.info(ai_result)
 
-            except Exception as e:
-                st.error(f"Lỗi khi đọc kết quả AI: {e}")
+except Exception as e:
+st.error(f"Lỗi khi đọc kết quả AI: {e}")
 else:
-    st.info("Vui lòng tải file Word để bắt đầu đánh giá.")
+st.info("Vui lòng tải file Word để bắt đầu đánh giá.")
 
