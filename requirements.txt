@@ -1,16 +1,26 @@
-# requirements.txt
+# Streamlit app cho phân tích phương án kinh doanh từ file Word
 
-# Thư viện chính cho Streamlit
+# --- Thư viện giao diện chính ---
+
 streamlit
 
-# Thư viện xử lý dữ liệu chính
+# --- Xử lý dữ liệu ---
+
 pandas
+numpy
 
-# Thư viện cho chức năng AI (sử dụng Gemini API)
-google-genai
+# --- Đọc file Word (.docx) ---
 
-# Thư viện cần thiết để pandas đọc và ghi file Excel (.xlsx)
+python-docx
+
+# --- Tính toán và xử lý số liệu ---
+
 openpyxl
 
-# THÊM THƯ VIỆN NÀY ĐỂ GIẢI QUYẾT LỖI to_markdown()
+# --- Gọi API Gemini AI ---
+
+google-genai
+
+# --- Hỗ trợ định dạng Markdown (tránh lỗi .to_markdown) ---
+
 tabulate
