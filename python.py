@@ -170,13 +170,13 @@ df_cf = build_cashflow(data)
 st.subheader("📊 Bảng Dòng Tiền Dự Án")
 st.dataframe(df_cf.style.format("{:,.2f}"), use_container_width=True)
 
-                npv, irr, pp, dpp = calc_financial_metrics(df_cf, data['WACC'])
-                st.subheader("📈 Các Chỉ Số Hiệu Quả Dự Án")
-                col1, col2, col3, col4 = st.columns(4)
-                col1.metric("NPV (tỷ đồng)", f"{npv:,.2f}")
-                col2.metric("IRR (%)", f"{irr:.2f}")
-                col3.metric("PP (năm)", pp)
-                col4.metric("DPP (năm)", dpp)
+npv, irr, pp, dpp = calc_financial_metrics(df_cf, data['WACC'])
+st.subheader("📈 Các Chỉ Số Hiệu Quả Dự Án")
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("NPV (tỷ đồng)", f"{npv:,.2f}")
+col2.metric("IRR (%)", f"{irr:.2f}")
+col3.metric("PP (năm)", pp)
+col4.metric("DPP (năm)", dpp)
 
                 if st.button("🧠 Yêu cầu AI phân tích hiệu quả dự án"):
                     with st.spinner("AI đang phân tích..."):
