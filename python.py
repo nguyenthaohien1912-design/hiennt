@@ -149,7 +149,7 @@ if uploaded_file:
             extracted = extract_project_info(text, api_key)
             st.code(extracted, language="json")
 
-            try:
+try:
 import json
 import re
 
