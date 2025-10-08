@@ -167,8 +167,8 @@ except json.JSONDecodeError as e:
 
 df_cf = build_cashflow(data)
 
-                st.subheader("📊 Bảng Dòng Tiền Dự Án")
-                st.dataframe(df_cf.style.format("{:,.2f}"), use_container_width=True)
+st.subheader("📊 Bảng Dòng Tiền Dự Án")
+st.dataframe(df_cf.style.format("{:,.2f}"), use_container_width=True)
 
                 npv, irr, pp, dpp = calc_financial_metrics(df_cf, data['WACC'])
                 st.subheader("📈 Các Chỉ Số Hiệu Quả Dự Án")
