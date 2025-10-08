@@ -165,7 +165,7 @@ except json.JSONDecodeError as e:
     st.error(f"Lỗi định dạng JSON từ AI: {e}")
     st.stop()
 
-                df_cf = build_cashflow(data)
+df_cf = build_cashflow(data)
 
                 st.subheader("📊 Bảng Dòng Tiền Dự Án")
                 st.dataframe(df_cf.style.format("{:,.2f}"), use_container_width=True)
